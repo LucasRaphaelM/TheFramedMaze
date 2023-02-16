@@ -1,0 +1,8 @@
+#include "DownIdle.h"
+#include "DownWalk.h"
+#include "LeftIdle.h"
+#include "LeftSideWalk.h"
+#include "RightIdle.h"
+#include "RightSideWalk.h"
+#include "UpIdle.h"
+#include "UpWalk.h"
