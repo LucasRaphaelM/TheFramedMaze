@@ -1,0 +1,21 @@
+{
+	"files.exclude": {
+		"**/.git": true,
+		"**/.svn": true,
+		"**/.hg": true,
+		"**/CVS": true,
+		"**/.DS_Store": true,
+		"**/*.o": true,
+		"**/*.exe": true,
+	},
+	"C_Cpp.errorSquiggles": "disabled",
+	"files.associations": {
+		"leftsidewalk.h": "c",
+		"windowscreenconfig.h": "c",
+		"allplayersprites.h": "c",
+		"wallhitboxesmap1.h": "c",
+		"raylib.h": "c",
+		"downidle.h": "c",
+		"downwalk.h": "c"
+	}
+}
