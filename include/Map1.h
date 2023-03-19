@@ -44,6 +44,11 @@ bool GetBigger = true;
 int Map1(void)
 {
     int i = 0;
+    int QWallsTop = 59;
+    int QWallsBottom = 4;
+    int QWallsLeft = 4;
+    int QWallsRight = 3;
+    int MostWallsQuantity = 59;
 
 /*----------------------LOAD BACKGROUND IMG----------------------*/
     Image FundoMapa = { 0 };
@@ -159,21 +164,79 @@ if(AnimationPositionStarter)
     SetWindowSize(ViewSizeWidth, ViewSizeHeight);
 
 /*------------------------------WALLS COLLISIONS------------------------------*/
-    Rectangle WallsBOTTOM[3] = { posXBOTTOM[0], posYBOTTOM[0], WidthWallHori[0], 3,
-                                 posXBOTTOM[1], posYBOTTOM[1], WidthWallHori[1], 3,
-                                 posXBOTTOM[2], posYBOTTOM[2], WidthWallHori[2], 3};
+    Rectangle WallsBOTTOM[4] = { posXBOTTOM[0], posYBOTTOM[0], WidthWallHoriB[0], 3,
+                                 posXBOTTOM[1], posYBOTTOM[1], WidthWallHoriB[1], 3,
+                                 posXBOTTOM[2], posYBOTTOM[2], WidthWallHoriB[2], 3,
+                                 posXBOTTOM[3], posYBOTTOM[3], WidthWallHoriB[3], 3};
 
-    Rectangle WallsTOP[3] = { posXTOP[0], posYTOP[0], WidthWallHori[0], 3,
-                              posXTOP[1], posYTOP[1], WidthWallHori[1], 3,
-                              posXTOP[2], posYTOP[2], WidthWallHori[2], 3};
+    Rectangle WallsTOP[59] = { posXTOP[0], posYTOP[0], WidthWallHoriT[0], 3,
+                              posXTOP[1], posYTOP[1], WidthWallHoriT[1], 3,
+                              posXTOP[2], posYTOP[2], WidthWallHoriT[2], 3,
+                              posXTOP[3], posYTOP[3], WidthWallHoriT[3], 3,
+                              posXTOP[4], posYTOP[4], WidthWallHoriT[4], 3,
+                              posXTOP[5], posYTOP[5], WidthWallHoriT[5], 3,
+                              posXTOP[6], posYTOP[6], WidthWallHoriT[6], 3,
+                              posXTOP[7], posYTOP[7], WidthWallHoriT[7], 3,
+                              posXTOP[8], posYTOP[8], WidthWallHoriT[8], 3,
+                              posXTOP[9], posYTOP[9], WidthWallHoriT[9], 3,
+                              posXTOP[10], posYTOP[10], WidthWallHoriT[10], 3,
+                              posXTOP[11], posYTOP[11], WidthWallHoriT[11], 3,
+                              posXTOP[12], posYTOP[12], WidthWallHoriT[12], 3,
+                              posXTOP[13], posYTOP[13], WidthWallHoriT[13], 3,
+                              posXTOP[14], posYTOP[14], WidthWallHoriT[14], 3,
+                              posXTOP[15], posYTOP[15], WidthWallHoriT[15], 3,
+                              posXTOP[16], posYTOP[16], WidthWallHoriT[16], 3,
+                              posXTOP[17], posYTOP[17], WidthWallHoriT[17], 3,
+                              posXTOP[18], posYTOP[18], WidthWallHoriT[18], 3,
+                              posXTOP[19], posYTOP[19], WidthWallHoriT[19], 3,
+                              posXTOP[20], posYTOP[20], WidthWallHoriT[20], 3,
+                              posXTOP[21], posYTOP[21], WidthWallHoriT[21], 3,
+                              posXTOP[22], posYTOP[22], WidthWallHoriT[22], 3,
+                              posXTOP[23], posYTOP[23], WidthWallHoriT[23], 3,
+                              posXTOP[24], posYTOP[24], WidthWallHoriT[24], 3,
+                              posXTOP[25], posYTOP[25], WidthWallHoriT[25], 3,
+                              posXTOP[26], posYTOP[26], WidthWallHoriT[26], 3,
+                              posXTOP[27], posYTOP[27], WidthWallHoriT[27], 3,
+                              posXTOP[28], posYTOP[28], WidthWallHoriT[28], 3,
+                              posXTOP[29], posYTOP[29], WidthWallHoriT[29], 3,
+                              posXTOP[30], posYTOP[30], WidthWallHoriT[30], 3,
+                              posXTOP[31], posYTOP[31], WidthWallHoriT[31], 3,
+                              posXTOP[32], posYTOP[32], WidthWallHoriT[32], 3,
+                              posXTOP[33], posYTOP[33], WidthWallHoriT[33], 3,
+                              posXTOP[34], posYTOP[34], WidthWallHoriT[34], 3,
+                              posXTOP[35], posYTOP[35], WidthWallHoriT[35], 3,
+                              posXTOP[36], posYTOP[36], WidthWallHoriT[36], 3,
+                              posXTOP[37], posYTOP[37], WidthWallHoriT[37], 3,
+                              posXTOP[38], posYTOP[38], WidthWallHoriT[38], 3,
+                              posXTOP[39], posYTOP[39], WidthWallHoriT[39], 3,
+                              posXTOP[40], posYTOP[40], WidthWallHoriT[40], 3,
+                              posXTOP[41], posYTOP[41], WidthWallHoriT[41], 3,
+                              posXTOP[42], posYTOP[42], WidthWallHoriT[42], 3,
+                              posXTOP[43], posYTOP[43], WidthWallHoriT[43], 3,
+                              posXTOP[44], posYTOP[44], WidthWallHoriT[44], 3,
+                              posXTOP[45], posYTOP[45], WidthWallHoriT[45], 3,
+                              posXTOP[46], posYTOP[46], WidthWallHoriT[46], 3,
+                              posXTOP[47], posYTOP[47], WidthWallHoriT[47], 3,
+                              posXTOP[48], posYTOP[48], WidthWallHoriT[48], 3,
+                              posXTOP[49], posYTOP[49], WidthWallHoriT[49], 3,
+                              posXTOP[50], posYTOP[50], WidthWallHoriT[50], 3,
+                              posXTOP[51], posYTOP[51], WidthWallHoriT[51], 3,
+                              posXTOP[52], posYTOP[52], WidthWallHoriT[52], 3,
+                              posXTOP[53], posYTOP[53], WidthWallHoriT[53], 3,
+                              posXTOP[54], posYTOP[54], WidthWallHoriT[54], 3,
+                              posXTOP[55], posYTOP[55], WidthWallHoriT[55], 3,
+                              posXTOP[56], posYTOP[56], WidthWallHoriT[56], 3,
+                              posXTOP[57], posYTOP[57], WidthWallHoriT[57], 3,
+                              posXTOP[58], posYTOP[58], WidthWallHoriT[58], 3};
 
-    Rectangle WallsLEFT[3] = { posXLEFT[0], posYLEFT[0], 3, HeightWallVert[0],
-                               posXLEFT[1], posYLEFT[1], 3, HeightWallVert[1],
-                               posXLEFT[2], posYLEFT[2], 3, HeightWallVert[2]};
+    Rectangle WallsLEFT[4] = { posXLEFT[0], posYLEFT[0], 3, HeightWallVertL[0],
+                               posXLEFT[1], posYLEFT[1], 3, HeightWallVertL[1],
+                               posXLEFT[2], posYLEFT[2], 3, HeightWallVertL[2],
+                               posXLEFT[3], posYLEFT[3], 3, HeightWallVertL[3]};
 
-    Rectangle WallsRIGHT[3] = { posXRIGHT[0], posYRIGHT[0], 3, HeightWallVert[0],
-                                posXRIGHT[1], posYRIGHT[1], 3, HeightWallVert[1],
-                                posXRIGHT[2], posYRIGHT[2], 3, HeightWallVert[2]};
+    Rectangle WallsRIGHT[4] = { posXRIGHT[0], posYRIGHT[0], 3, HeightWallVertR[0],
+                                posXRIGHT[1], posYRIGHT[1], 3, HeightWallVertR[1],
+                                posXRIGHT[2], posYRIGHT[2], 3, HeightWallVertR[2]};
 /*-----------------------------------------------------------------------------*/
 
 /*-----------------CHECKING PLAYER COLLISION WITH WALLS------------------*/
@@ -195,40 +258,40 @@ if(AnimationPositionStarter)
         WallsRIGHT[i].y = posYRIGHT[i];
         WallsRIGHT[i].height = HeightWallVert[i];
     }*/
-    for(i = 0; i < 3; i++)
-    {
-        WallsTOP[i].x = posXTOP[i];
-        WallsTOP[i].y = posYTOP[i];
-        WallsTOP[i].width = WidthWallHori[i];
-        CollisionTOP = CheckCollisionRecs(Player, WallsTOP[i]);
-        if(CollisionTOP)
-            break;
-    }
-    for(i = 0; i < 3; i++)
+    for(i = 0; i < QWallsBottom; i++)
     {
         WallsBOTTOM[i].x = posXBOTTOM[i];
         WallsBOTTOM[i].y = posYBOTTOM[i];
-        WallsBOTTOM[i].width = WidthWallHori[i];
+        WallsBOTTOM[i].width = WidthWallHoriB[i];
         CollisionBOTTOM = CheckCollisionRecs(Player, WallsBOTTOM[i]);
         if(CollisionBOTTOM)
             break;
     }
-    for(i = 0; i < 3; i++)
+    for(i = 0; i < QWallsTop; i++)
+    {
+        WallsTOP[i].x = posXTOP[i];
+        WallsTOP[i].y = posYTOP[i];
+        WallsTOP[i].width = WidthWallHoriT[i];
+        CollisionTOP = CheckCollisionRecs(Player, WallsTOP[i]);
+        if(CollisionTOP)
+            break;
+    }
+    for(i = 0; i < QWallsLeft; i++)
     {
         WallsLEFT[i].x = posXLEFT[i];
         WallsLEFT[i].y = posYLEFT[i];
-        WallsLEFT[i].height = HeightWallVert[i];
-        CollisionLEFT = CheckCollisionRecs(Player, WallsLEFT[i]);
-        if(CollisionLEFT)
+        WallsLEFT[i].height = HeightWallVertL[i];
+        CollisionRIGHT = CheckCollisionRecs(Player, WallsLEFT[i]);
+        if(CollisionRIGHT)
             break;
     }
-    for(i = 0; i < 3; i++)
+    for(i = 0; i < QWallsRight; i++)
     {
         WallsRIGHT[i].x = posXRIGHT[i];
         WallsRIGHT[i].y = posYRIGHT[i];
-        WallsRIGHT[i].height = HeightWallVert[i];
-        CollisionRIGHT = CheckCollisionRecs(Player, WallsRIGHT[i]);
-        if(CollisionRIGHT)
+        WallsRIGHT[i].height = HeightWallVertR[i];
+        CollisionLEFT = CheckCollisionRecs(Player, WallsRIGHT[i]);
+        if(CollisionLEFT)
             break;
     }
 /*-----------------------------------------------------------------------------------*/
@@ -238,12 +301,16 @@ if(AnimationPositionStarter)
 
     if((IsKeyDown(KEY_D) || IsKeyDown(KEY_RIGHT)) && !CollisionLEFT)
     {
-        for(i = 0; i < 3; i++)
+        for(i = 0; i < MostWallsQuantity; i++)
         {
-            posXTOP[i] -= PlayerSpeed*GetFrameTime();
-            posXBOTTOM[i] -= PlayerSpeed*GetFrameTime();
-            posXLEFT[i] -= PlayerSpeed*GetFrameTime();
-            posXRIGHT[i] -= PlayerSpeed*GetFrameTime();
+            if(i < QWallsTop)
+                posXTOP[i] -= PlayerSpeed*GetFrameTime();
+            if(i < QWallsBottom)
+                posXBOTTOM[i] -= PlayerSpeed*GetFrameTime();
+            if(i < QWallsLeft)
+                posXLEFT[i] -= PlayerSpeed*GetFrameTime();
+            if(i < QWallsRight)
+                posXRIGHT[i] -= PlayerSpeed*GetFrameTime();
         }
         fundo.x -= PlayerSpeed*GetFrameTime();
         screenPosX += PlayerSpeed*GetFrameTime();
@@ -256,12 +323,16 @@ if(AnimationPositionStarter)
 
     if ((IsKeyDown(KEY_A) || IsKeyDown(KEY_LEFT)) && !CollisionRIGHT)
     {
-        for(i = 0; i < 3; i++)
+        for(i = 0; i < MostWallsQuantity; i++)
         {
-            posXTOP[i] += PlayerSpeed*GetFrameTime();
-            posXBOTTOM[i] += PlayerSpeed*GetFrameTime();
-            posXLEFT[i] += PlayerSpeed*GetFrameTime();
-            posXRIGHT[i] += PlayerSpeed*GetFrameTime();
+            if(i < QWallsTop)
+                posXTOP[i] += PlayerSpeed*GetFrameTime();
+            if(i < QWallsBottom)
+                posXBOTTOM[i] += PlayerSpeed*GetFrameTime();
+            if(i < QWallsLeft)
+                posXLEFT[i] += PlayerSpeed*GetFrameTime();
+            if(i < QWallsRight)
+                posXRIGHT[i] += PlayerSpeed*GetFrameTime();
         }
         fundo.x += PlayerSpeed*GetFrameTime();
         screenPosX -= PlayerSpeed*GetFrameTime();
@@ -272,14 +343,18 @@ if(AnimationPositionStarter)
     }
 
 
-    if ((IsKeyDown(KEY_W) || IsKeyDown(KEY_UP)) && !CollisionBOTTOM)
+    if ((IsKeyDown(KEY_W) || IsKeyDown(KEY_UP)) && !CollisionTOP)
     {
-        for(i = 0; i < 3; i++)
+        for(i = 0; i < MostWallsQuantity; i++)
         {
-            posYTOP[i] += PlayerSpeed*GetFrameTime();
-            posYBOTTOM[i] += PlayerSpeed*GetFrameTime();
-            posYLEFT[i] += PlayerSpeed*GetFrameTime();
-            posYRIGHT[i] += PlayerSpeed*GetFrameTime();
+            if(i < QWallsTop)
+                posYTOP[i] += PlayerSpeed*GetFrameTime();
+            if(i < QWallsBottom)
+                posYBOTTOM[i] += PlayerSpeed*GetFrameTime();
+            if(i < QWallsLeft)
+                posYLEFT[i] += PlayerSpeed*GetFrameTime();
+            if(i < QWallsRight)
+                posYRIGHT[i] += PlayerSpeed*GetFrameTime();
         }
         fundo.y += PlayerSpeed*GetFrameTime();
         screenPosY -= PlayerSpeed*GetFrameTime();
@@ -290,14 +365,18 @@ if(AnimationPositionStarter)
     }
 
 
-    if ((IsKeyDown(KEY_S) || IsKeyDown(KEY_DOWN)) && !CollisionTOP)
+    if ((IsKeyDown(KEY_S) || IsKeyDown(KEY_DOWN)) && !CollisionBOTTOM)
     {
-        for(i = 0; i < 3; i++)
+        for(i = 0; i < MostWallsQuantity; i++)
         {
-            posYTOP[i] -= PlayerSpeed*GetFrameTime();
-            posYBOTTOM[i] -= PlayerSpeed*GetFrameTime();
-            posYLEFT[i] -= PlayerSpeed*GetFrameTime();
-            posYRIGHT[i] -= PlayerSpeed*GetFrameTime();
+            if(i < QWallsTop)
+                posYTOP[i] -= PlayerSpeed*GetFrameTime();
+            if(i < QWallsBottom)
+                posYBOTTOM[i] -= PlayerSpeed*GetFrameTime();
+            if(i < QWallsLeft)
+                posYLEFT[i] -= PlayerSpeed*GetFrameTime();
+            if(i < QWallsRight)
+                posYRIGHT[i] -= PlayerSpeed*GetFrameTime();
         }
         fundo.y -= PlayerSpeed*GetFrameTime();
         screenPosY += PlayerSpeed*GetFrameTime();
@@ -322,18 +401,30 @@ if(AnimationPositionStarter)
         PlayerPosition.y = 93;
         fundo.x += 25;
         fundo.y +=25;
-        for(i = 0; i < 3; i++)
+        for(i = 0; i < MostWallsQuantity; i++)
         {
-            posXTOP[i] += 25;
-            posXBOTTOM[i] += 25;
-            posXLEFT[i] += 25;
-            posXRIGHT[i] += 25;
-            posYTOP[i] += 25;
-            posYBOTTOM[i] += 25;
-            posYLEFT[i] += 25;
-            posYRIGHT[i] += 25;
+            if(i < QWallsTop)
+            {
+                posXTOP[i] += 25;
+                posYTOP[i] += 25;
+            }
+            if(i < QWallsBottom)
+            {
+                posXBOTTOM[i] += 25;
+                posYBOTTOM[i] += 25;
+            }
+            if(i < QWallsLeft)
+            {
+                posXLEFT[i] += 25;
+                posYLEFT[i] += 25;
+            }
+            if(i < QWallsRight)
+            {
+                posXRIGHT[i] += 25;
+                posYRIGHT[i] += 25;
+            }
         }
-        GetBigger = false;
+        //GetBigger = false;
     }
 
     BeginDrawing();
@@ -393,15 +484,19 @@ if(AnimationPositionStarter)
         DrawTextureRec(PlayerSprites[7], PlayerSprite[7], PlayerPosition, WHITE);
     }
 
-    for(i = 0; i < 3; i++)
-    {
-        DrawRectangleRec(WallsTOP[i],MAROON);
-        DrawRectangleRec(WallsBOTTOM[i],MAROON);
-        DrawRectangleRec(WallsLEFT[i],MAROON);
-        DrawRectangleRec(WallsRIGHT[i],MAROON);
-    }
 
-    DrawTextureV(Fundo[1], fundo, WHITE);
+    //DrawTextureV(Fundo[1], fundo, WHITE);
+    for(i = 0; i < MostWallsQuantity; i++)
+    {
+        if(i < QWallsTop)
+            DrawRectangleRec(WallsTOP[i],YELLOW);
+        if(i < QWallsBottom)
+            DrawRectangleRec(WallsBOTTOM[i],RED);
+        if(i < QWallsLeft)
+            DrawRectangleRec(WallsLEFT[i],DARKPURPLE);
+        if(i < QWallsRight)
+            DrawRectangleRec(WallsRIGHT[i],DARKBLUE);
+    }
     EndDrawing();
     for(i = 0; i < 9; i++)
         UnloadTexture(PlayerSprites[i]);
