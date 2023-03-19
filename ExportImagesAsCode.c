@@ -2,8 +2,8 @@
 
 int main(void)
 {
-    Image Exportar = LoadImage("Maps/FundoMapaAcimaPlayer.png");
-    ExportImageAsCode(Exportar,"Maps.h/FundoMapaAcimaPlayer.h");
+    Image Exportar = LoadImage("Maps/FundoMapa.png");
+    ExportImageAsCode(Exportar,"Maps.h/FundoMapa.h");
     UnloadImage(Exportar);
     return 0;
 }
