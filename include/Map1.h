@@ -45,10 +45,10 @@ int Map1(void)
 {
     int i = 0;
     int QWallsTop = 59;
-    int QWallsBottom = 4;
+    int QWallsBottom = 63;
     int QWallsLeft = 4;
     int QWallsRight = 3;
-    int MostWallsQuantity = 59;
+    int MostWallsQuantity = 63;
 
 /*----------------------LOAD BACKGROUND IMG----------------------*/
     Image FundoMapa = { 0 };
@@ -164,10 +164,69 @@ if(AnimationPositionStarter)
     SetWindowSize(ViewSizeWidth, ViewSizeHeight);
 
 /*------------------------------WALLS COLLISIONS------------------------------*/
-    Rectangle WallsBOTTOM[4] = { posXBOTTOM[0], posYBOTTOM[0], WidthWallHoriB[0], 3,
+    Rectangle WallsBOTTOM[63] = { posXBOTTOM[0], posYBOTTOM[0], WidthWallHoriB[0], 3,
                                  posXBOTTOM[1], posYBOTTOM[1], WidthWallHoriB[1], 3,
                                  posXBOTTOM[2], posYBOTTOM[2], WidthWallHoriB[2], 3,
-                                 posXBOTTOM[3], posYBOTTOM[3], WidthWallHoriB[3], 3};
+                                 posXBOTTOM[3], posYBOTTOM[3], WidthWallHoriB[3], 3,
+                                 posXBOTTOM[4], posYBOTTOM[4], WidthWallHoriB[4], 3,
+                                 posXBOTTOM[5], posYBOTTOM[5], WidthWallHoriB[5], 3,
+                                 posXBOTTOM[6], posYBOTTOM[6], WidthWallHoriB[6], 3,
+                                 posXBOTTOM[7], posYBOTTOM[7], WidthWallHoriB[7], 3,
+                                 posXBOTTOM[8], posYBOTTOM[8], WidthWallHoriB[8], 3,
+                                 posXBOTTOM[9], posYBOTTOM[9], WidthWallHoriB[9], 3,
+                                 posXBOTTOM[10], posYBOTTOM[10], WidthWallHoriB[10], 3,
+                                 posXBOTTOM[11], posYBOTTOM[11], WidthWallHoriB[11], 3,
+                                 posXBOTTOM[12], posYBOTTOM[12], WidthWallHoriB[12], 3,
+                                 posXBOTTOM[13], posYBOTTOM[13], WidthWallHoriB[13], 3,
+                                 posXBOTTOM[14], posYBOTTOM[14], WidthWallHoriB[14], 3,
+                                 posXBOTTOM[15], posYBOTTOM[15], WidthWallHoriB[15], 3,
+                                 posXBOTTOM[16], posYBOTTOM[16], WidthWallHoriB[16], 3,
+                                 posXBOTTOM[17], posYBOTTOM[17], WidthWallHoriB[17], 3,
+                                 posXBOTTOM[18], posYBOTTOM[18], WidthWallHoriB[18], 3,
+                                 posXBOTTOM[19], posYBOTTOM[19], WidthWallHoriB[19], 3,
+                                 posXBOTTOM[20], posYBOTTOM[20], WidthWallHoriB[20], 3,
+                                 posXBOTTOM[21], posYBOTTOM[21], WidthWallHoriB[21], 3,
+                                 posXBOTTOM[22], posYBOTTOM[22], WidthWallHoriB[22], 3,
+                                 posXBOTTOM[23], posYBOTTOM[23], WidthWallHoriB[23], 3,
+                                 posXBOTTOM[24], posYBOTTOM[24], WidthWallHoriB[24], 3,
+                                 posXBOTTOM[25], posYBOTTOM[25], WidthWallHoriB[25], 3,
+                                 posXBOTTOM[26], posYBOTTOM[26], WidthWallHoriB[26], 3,
+                                 posXBOTTOM[27], posYBOTTOM[27], WidthWallHoriB[27], 3,
+                                 posXBOTTOM[28], posYBOTTOM[28], WidthWallHoriB[28], 3,
+                                 posXBOTTOM[29], posYBOTTOM[29], WidthWallHoriB[29], 3,
+                                 posXBOTTOM[30], posYBOTTOM[30], WidthWallHoriB[30], 3,
+                                 posXBOTTOM[31], posYBOTTOM[31], WidthWallHoriB[31], 3,
+                                 posXBOTTOM[32], posYBOTTOM[32], WidthWallHoriB[32], 3,
+                                 posXBOTTOM[33], posYBOTTOM[33], WidthWallHoriB[33], 3,
+                                 posXBOTTOM[34], posYBOTTOM[34], WidthWallHoriB[34], 3,
+                                 posXBOTTOM[35], posYBOTTOM[35], WidthWallHoriB[35], 3,
+                                 posXBOTTOM[36], posYBOTTOM[36], WidthWallHoriB[36], 3,
+                                 posXBOTTOM[37], posYBOTTOM[37], WidthWallHoriB[37], 3,
+                                 posXBOTTOM[38], posYBOTTOM[38], WidthWallHoriB[38], 3,
+                                 posXBOTTOM[39], posYBOTTOM[39], WidthWallHoriB[39], 3,
+                                 posXBOTTOM[40], posYBOTTOM[40], WidthWallHoriB[40], 3,
+                                 posXBOTTOM[41], posYBOTTOM[41], WidthWallHoriB[41], 3,
+                                 posXBOTTOM[42], posYBOTTOM[42], WidthWallHoriB[42], 3,
+                                 posXBOTTOM[43], posYBOTTOM[43], WidthWallHoriB[43], 3,
+                                 posXBOTTOM[44], posYBOTTOM[44], WidthWallHoriB[44], 3,
+                                 posXBOTTOM[45], posYBOTTOM[45], WidthWallHoriB[45], 3,
+                                 posXBOTTOM[46], posYBOTTOM[46], WidthWallHoriB[46], 3,
+                                 posXBOTTOM[47], posYBOTTOM[47], WidthWallHoriB[47], 3,
+                                 posXBOTTOM[48], posYBOTTOM[48], WidthWallHoriB[48], 3,
+                                 posXBOTTOM[49], posYBOTTOM[49], WidthWallHoriB[49], 3,
+                                 posXBOTTOM[50], posYBOTTOM[50], WidthWallHoriB[50], 3,
+                                 posXBOTTOM[51], posYBOTTOM[51], WidthWallHoriB[51], 3,
+                                 posXBOTTOM[52], posYBOTTOM[52], WidthWallHoriB[52], 3,
+                                 posXBOTTOM[53], posYBOTTOM[53], WidthWallHoriB[53], 3,
+                                 posXBOTTOM[54], posYBOTTOM[54], WidthWallHoriB[54], 3,
+                                 posXBOTTOM[55], posYBOTTOM[55], WidthWallHoriB[55], 3,
+                                 posXBOTTOM[56], posYBOTTOM[56], WidthWallHoriB[56], 3,
+                                 posXBOTTOM[57], posYBOTTOM[57], WidthWallHoriB[57], 3,
+                                 posXBOTTOM[58], posYBOTTOM[58], WidthWallHoriB[58], 3,
+                                 posXBOTTOM[59], posYBOTTOM[59], WidthWallHoriB[59], 3,
+                                 posXBOTTOM[60], posYBOTTOM[60], WidthWallHoriB[60], 3,
+                                 posXBOTTOM[61], posYBOTTOM[61], WidthWallHoriB[61], 3,
+                                 posXBOTTOM[62], posYBOTTOM[62], WidthWallHoriB[62], 3};
 
     Rectangle WallsTOP[59] = { posXTOP[0], posYTOP[0], WidthWallHoriT[0], 3,
                               posXTOP[1], posYTOP[1], WidthWallHoriT[1], 3,
