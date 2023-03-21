@@ -47,7 +47,7 @@ int Map1(void)
     int QWallsTop = 59;
     int QWallsBottom = 63;
     int QWallsLeft = 4;
-    int QWallsRight = 3;
+    int QWallsRight = 62;
     int MostWallsQuantity = 63;
 
 /*----------------------LOAD BACKGROUND IMG----------------------*/
@@ -293,9 +293,68 @@ if(AnimationPositionStarter)
                                posXLEFT[2], posYLEFT[2], 3, HeightWallVertL[2],
                                posXLEFT[3], posYLEFT[3], 3, HeightWallVertL[3]};
 
-    Rectangle WallsRIGHT[4] = { posXRIGHT[0], posYRIGHT[0], 3, HeightWallVertR[0],
+    Rectangle WallsRIGHT[62] = { posXRIGHT[0], posYRIGHT[0], 3, HeightWallVertR[0],
                                 posXRIGHT[1], posYRIGHT[1], 3, HeightWallVertR[1],
-                                posXRIGHT[2], posYRIGHT[2], 3, HeightWallVertR[2]};
+                                posXRIGHT[2], posYRIGHT[2], 3, HeightWallVertR[2],
+                                posXRIGHT[3], posYRIGHT[3], 3, HeightWallVertR[3],
+                                posXRIGHT[4], posYRIGHT[4], 3, HeightWallVertR[4],
+                                posXRIGHT[5], posYRIGHT[5], 3, HeightWallVertR[5],
+                                posXRIGHT[6], posYRIGHT[6], 3, HeightWallVertR[6],
+                                posXRIGHT[7], posYRIGHT[7], 3, HeightWallVertR[7],
+                                posXRIGHT[8], posYRIGHT[8], 3, HeightWallVertR[8],
+                                posXRIGHT[9], posYRIGHT[9], 3, HeightWallVertR[9],
+                                posXRIGHT[10], posYRIGHT[10], 3, HeightWallVertR[10],
+                                posXRIGHT[11], posYRIGHT[11], 3, HeightWallVertR[11],
+                                posXRIGHT[12], posYRIGHT[12], 3, HeightWallVertR[12],
+                                posXRIGHT[13], posYRIGHT[13], 3, HeightWallVertR[13],
+                                posXRIGHT[14], posYRIGHT[14], 3, HeightWallVertR[14],
+                                posXRIGHT[15], posYRIGHT[15], 3, HeightWallVertR[15],
+                                posXRIGHT[16], posYRIGHT[16], 3, HeightWallVertR[16],
+                                posXRIGHT[17], posYRIGHT[17], 3, HeightWallVertR[17],
+                                posXRIGHT[18], posYRIGHT[18], 3, HeightWallVertR[18],
+                                posXRIGHT[19], posYRIGHT[19], 3, HeightWallVertR[19],
+                                posXRIGHT[20], posYRIGHT[20], 3, HeightWallVertR[20],
+                                posXRIGHT[21], posYRIGHT[21], 3, HeightWallVertR[21],
+                                posXRIGHT[22], posYRIGHT[22], 3, HeightWallVertR[22],
+                                posXRIGHT[23], posYRIGHT[23], 3, HeightWallVertR[23],
+                                posXRIGHT[24], posYRIGHT[24], 3, HeightWallVertR[24],
+                                posXRIGHT[25], posYRIGHT[25], 3, HeightWallVertR[25],
+                                posXRIGHT[26], posYRIGHT[26], 3, HeightWallVertR[26],
+                                posXRIGHT[27], posYRIGHT[27], 3, HeightWallVertR[27],
+                                posXRIGHT[28], posYRIGHT[28], 3, HeightWallVertR[28],
+                                posXRIGHT[29], posYRIGHT[29], 3, HeightWallVertR[29],
+                                posXRIGHT[30], posYRIGHT[30], 3, HeightWallVertR[30],
+                                posXRIGHT[31], posYRIGHT[31], 3, HeightWallVertR[31],
+                                posXRIGHT[32], posYRIGHT[32], 3, HeightWallVertR[32],
+                                posXRIGHT[33], posYRIGHT[33], 3, HeightWallVertR[33],
+                                posXRIGHT[34], posYRIGHT[34], 3, HeightWallVertR[34],
+                                posXRIGHT[35], posYRIGHT[35], 3, HeightWallVertR[35],
+                                posXRIGHT[36], posYRIGHT[36], 3, HeightWallVertR[36],
+                                posXRIGHT[37], posYRIGHT[37], 3, HeightWallVertR[37],
+                                posXRIGHT[38], posYRIGHT[38], 3, HeightWallVertR[38],
+                                posXRIGHT[39], posYRIGHT[39], 3, HeightWallVertR[39],
+                                posXRIGHT[40], posYRIGHT[40], 3, HeightWallVertR[40],
+                                posXRIGHT[41], posYRIGHT[41], 3, HeightWallVertR[41],
+                                posXRIGHT[42], posYRIGHT[42], 3, HeightWallVertR[42],
+                                posXRIGHT[43], posYRIGHT[43], 3, HeightWallVertR[43],
+                                posXRIGHT[44], posYRIGHT[44], 3, HeightWallVertR[44],
+                                posXRIGHT[45], posYRIGHT[45], 3, HeightWallVertR[45],
+                                posXRIGHT[46], posYRIGHT[46], 3, HeightWallVertR[46],
+                                posXRIGHT[47], posYRIGHT[47], 3, HeightWallVertR[47],
+                                posXRIGHT[48], posYRIGHT[48], 3, HeightWallVertR[48],
+                                posXRIGHT[49], posYRIGHT[49], 3, HeightWallVertR[49],
+                                posXRIGHT[50], posYRIGHT[50], 3, HeightWallVertR[50],
+                                posXRIGHT[51], posYRIGHT[51], 3, HeightWallVertR[51],
+                                posXRIGHT[52], posYRIGHT[52], 3, HeightWallVertR[52],
+                                posXRIGHT[53], posYRIGHT[53], 3, HeightWallVertR[53],
+                                posXRIGHT[54], posYRIGHT[54], 3, HeightWallVertR[54],
+                                posXRIGHT[55], posYRIGHT[55], 3, HeightWallVertR[55],
+                                posXRIGHT[56], posYRIGHT[56], 3, HeightWallVertR[56],
+                                posXRIGHT[57], posYRIGHT[57], 3, HeightWallVertR[57],
+                                posXRIGHT[58], posYRIGHT[58], 3, HeightWallVertR[58],
+                                posXRIGHT[59], posYRIGHT[59], 3, HeightWallVertR[59],
+                                posXRIGHT[60], posYRIGHT[60], 3, HeightWallVertR[60],
+                                posXRIGHT[61], posYRIGHT[61], 3, HeightWallVertR[61]};
 /*-----------------------------------------------------------------------------*/
 
 /*-----------------CHECKING PLAYER COLLISION WITH WALLS------------------*/
