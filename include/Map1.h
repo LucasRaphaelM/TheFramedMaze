@@ -29,6 +29,7 @@ int PlayerAnimation(Texture2D PlayerSprites, Rectangle PlayerSprite,int Nimagens
     int CurrentFramePlayer = 0;
     int framesCounterPlayer = 0;
     int frameSpeed = 7;
+    int TextBlinkingAmination = 0;
 /*---------------------------------------------------------------------------*/
 
 /*-----------------------PLAYER SPEED-----------------------*/
@@ -46,8 +47,8 @@ int Map1(void)
     int i = 0;
     int QWallsTop = 59;
     int QWallsBottom = 63;
-    int QWallsLeft = 4;
-    int QWallsRight = 62;
+    int QWallsLeft = 58;
+    int QWallsRight = 63;
     int MostWallsQuantity = 63;
 
 /*----------------------LOAD BACKGROUND IMG----------------------*/
@@ -288,12 +289,66 @@ if(AnimationPositionStarter)
                               posXTOP[57], posYTOP[57], WidthWallHoriT[57], 3,
                               posXTOP[58], posYTOP[58], WidthWallHoriT[58], 3};
 
-    Rectangle WallsLEFT[4] = { posXLEFT[0], posYLEFT[0], 3, HeightWallVertL[0],
+    Rectangle WallsLEFT[58] = { posXLEFT[0], posYLEFT[0], 3, HeightWallVertL[0],
                                posXLEFT[1], posYLEFT[1], 3, HeightWallVertL[1],
                                posXLEFT[2], posYLEFT[2], 3, HeightWallVertL[2],
-                               posXLEFT[3], posYLEFT[3], 3, HeightWallVertL[3]};
+                               posXLEFT[3], posYLEFT[3], 3, HeightWallVertL[3],
+                               posXLEFT[4], posYLEFT[4], 3, HeightWallVertL[4],
+                               posXLEFT[5], posYLEFT[5], 3, HeightWallVertL[5],
+                               posXLEFT[6], posYLEFT[6], 3, HeightWallVertL[6],
+                               posXLEFT[7], posYLEFT[7], 3, HeightWallVertL[7],
+                               posXLEFT[8], posYLEFT[8], 3, HeightWallVertL[8],
+                               posXLEFT[9], posYLEFT[9], 3, HeightWallVertL[9],
+                               posXLEFT[10], posYLEFT[10], 3, HeightWallVertL[10],
+                               posXLEFT[11], posYLEFT[11], 3, HeightWallVertL[11],
+                               posXLEFT[12], posYLEFT[12], 3, HeightWallVertL[12],
+                               posXLEFT[13], posYLEFT[13], 3, HeightWallVertL[13],
+                               posXLEFT[14], posYLEFT[14], 3, HeightWallVertL[14],
+                               posXLEFT[15], posYLEFT[15], 3, HeightWallVertL[15],
+                               posXLEFT[16], posYLEFT[16], 3, HeightWallVertL[16],
+                               posXLEFT[17], posYLEFT[17], 3, HeightWallVertL[17],
+                               posXLEFT[18], posYLEFT[18], 3, HeightWallVertL[18],
+                               posXLEFT[19], posYLEFT[19], 3, HeightWallVertL[19],
+                               posXLEFT[20], posYLEFT[20], 3, HeightWallVertL[20],
+                               posXLEFT[21], posYLEFT[21], 3, HeightWallVertL[21],
+                               posXLEFT[22], posYLEFT[22], 3, HeightWallVertL[22],
+                               posXLEFT[23], posYLEFT[23], 3, HeightWallVertL[23],
+                               posXLEFT[24], posYLEFT[24], 3, HeightWallVertL[24],
+                               posXLEFT[25], posYLEFT[25], 3, HeightWallVertL[25],
+                               posXLEFT[26], posYLEFT[26], 3, HeightWallVertL[26],
+                               posXLEFT[27], posYLEFT[27], 3, HeightWallVertL[27],
+                               posXLEFT[28], posYLEFT[28], 3, HeightWallVertL[28],
+                               posXLEFT[29], posYLEFT[29], 3, HeightWallVertL[29],
+                               posXLEFT[30], posYLEFT[30], 3, HeightWallVertL[30],
+                               posXLEFT[31], posYLEFT[31], 3, HeightWallVertL[31],
+                               posXLEFT[32], posYLEFT[32], 3, HeightWallVertL[32],
+                               posXLEFT[33], posYLEFT[33], 3, HeightWallVertL[33],
+                               posXLEFT[34], posYLEFT[34], 3, HeightWallVertL[34],
+                               posXLEFT[35], posYLEFT[35], 3, HeightWallVertL[35],
+                               posXLEFT[36], posYLEFT[36], 3, HeightWallVertL[36],
+                               posXLEFT[37], posYLEFT[37], 3, HeightWallVertL[37],
+                               posXLEFT[38], posYLEFT[38], 3, HeightWallVertL[38],
+                               posXLEFT[39], posYLEFT[39], 3, HeightWallVertL[39],
+                               posXLEFT[40], posYLEFT[40], 3, HeightWallVertL[40],
+                               posXLEFT[41], posYLEFT[41], 3, HeightWallVertL[41],
+                               posXLEFT[42], posYLEFT[42], 3, HeightWallVertL[42],
+                               posXLEFT[43], posYLEFT[43], 3, HeightWallVertL[43],
+                               posXLEFT[44], posYLEFT[44], 3, HeightWallVertL[44],
+                               posXLEFT[45], posYLEFT[45], 3, HeightWallVertL[45],
+                               posXLEFT[46], posYLEFT[46], 3, HeightWallVertL[46],
+                               posXLEFT[47], posYLEFT[47], 3, HeightWallVertL[47],
+                               posXLEFT[48], posYLEFT[48], 3, HeightWallVertL[48],
+                               posXLEFT[49], posYLEFT[49], 3, HeightWallVertL[49],
+                               posXLEFT[50], posYLEFT[50], 3, HeightWallVertL[50],
+                               posXLEFT[51], posYLEFT[51], 3, HeightWallVertL[51],
+                               posXLEFT[52], posYLEFT[52], 3, HeightWallVertL[52],
+                               posXLEFT[53], posYLEFT[53], 3, HeightWallVertL[53],
+                               posXLEFT[54], posYLEFT[54], 3, HeightWallVertL[54],
+                               posXLEFT[55], posYLEFT[55], 3, HeightWallVertL[55],
+                               posXLEFT[56], posYLEFT[56], 3, HeightWallVertL[56],
+                               posXLEFT[57], posYLEFT[57], 3, HeightWallVertL[57]};
 
-    Rectangle WallsRIGHT[62] = { posXRIGHT[0], posYRIGHT[0], 3, HeightWallVertR[0],
+    Rectangle WallsRIGHT[63] = { posXRIGHT[0], posYRIGHT[0], 3, HeightWallVertR[0],
                                 posXRIGHT[1], posYRIGHT[1], 3, HeightWallVertR[1],
                                 posXRIGHT[2], posYRIGHT[2], 3, HeightWallVertR[2],
                                 posXRIGHT[3], posYRIGHT[3], 3, HeightWallVertR[3],
@@ -354,8 +409,13 @@ if(AnimationPositionStarter)
                                 posXRIGHT[58], posYRIGHT[58], 3, HeightWallVertR[58],
                                 posXRIGHT[59], posYRIGHT[59], 3, HeightWallVertR[59],
                                 posXRIGHT[60], posYRIGHT[60], 3, HeightWallVertR[60],
-                                posXRIGHT[61], posYRIGHT[61], 3, HeightWallVertR[61]};
+                                posXRIGHT[61], posYRIGHT[61], 3, HeightWallVertR[61],
+                                posXRIGHT[62], posYRIGHT[62], 3, HeightWallVertR[62]};
 /*-----------------------------------------------------------------------------*/
+
+/*------------------------------POWER HITBOX-------------------------*/
+    Rectangle PowerCircle = {PosXPower, PosYPower, 30, 25};
+/*-------------------------------------------------------------------*/
 
 /*-----------------CHECKING PLAYER COLLISION WITH WALLS------------------*/
    /*for(i = 0; i < 3; i++)
@@ -412,6 +472,7 @@ if(AnimationPositionStarter)
         if(CollisionLEFT)
             break;
     }
+    CollisionPower = CheckCollisionRecs(Player, PowerCircle);
 /*-----------------------------------------------------------------------------------*/
 
     
@@ -430,6 +491,7 @@ if(AnimationPositionStarter)
             if(i < QWallsRight)
                 posXRIGHT[i] -= PlayerSpeed*GetFrameTime();
         }
+        PosXPower -= PlayerSpeed*GetFrameTime();
         fundo.x -= PlayerSpeed*GetFrameTime();
         screenPosX += PlayerSpeed*GetFrameTime();
         BRightIdle = true;
@@ -452,6 +514,7 @@ if(AnimationPositionStarter)
             if(i < QWallsRight)
                 posXRIGHT[i] += PlayerSpeed*GetFrameTime();
         }
+        PosXPower += PlayerSpeed*GetFrameTime();
         fundo.x += PlayerSpeed*GetFrameTime();
         screenPosX -= PlayerSpeed*GetFrameTime();
         BLeftIdle = true;
@@ -474,6 +537,7 @@ if(AnimationPositionStarter)
             if(i < QWallsRight)
                 posYRIGHT[i] += PlayerSpeed*GetFrameTime();
         }
+        PosYPower += PlayerSpeed*GetFrameTime();
         fundo.y += PlayerSpeed*GetFrameTime();
         screenPosY -= PlayerSpeed*GetFrameTime();
         BUpIdle = true;
@@ -496,6 +560,7 @@ if(AnimationPositionStarter)
             if(i < QWallsRight)
                 posYRIGHT[i] -= PlayerSpeed*GetFrameTime();
         }
+        PosYPower -= PlayerSpeed*GetFrameTime();
         fundo.y -= PlayerSpeed*GetFrameTime();
         screenPosY += PlayerSpeed*GetFrameTime();
         BDownIdle = true;
@@ -505,7 +570,7 @@ if(AnimationPositionStarter)
     }
 
 
-    if (IsKeyDown(KEY_SPACE) && GetBigger)
+    if (IsKeyDown(KEY_SPACE) && GetBigger && CollisionPower)
     {
         ViewSizeWidth += 50;
         ViewSizeHeight += 50;
@@ -518,7 +583,9 @@ if(AnimationPositionStarter)
         PlayerPosition.x = 93;
         PlayerPosition.y = 93;
         fundo.x += 25;
-        fundo.y +=25;
+        fundo.y += 25;
+        PosXPower += 25;
+        PosYPower += 25;
         for(i = 0; i < MostWallsQuantity; i++)
         {
             if(i < QWallsTop)
@@ -542,69 +609,69 @@ if(AnimationPositionStarter)
                 posYRIGHT[i] += 25;
             }
         }
-        //GetBigger = false;
+        GetBigger = false;
     }
 
     BeginDrawing();
     DrawTextureV(Fundo[0], fundo, WHITE);
-    if(IsKeyDown(KEY_A))
+    if(IsKeyDown(KEY_A) || IsKeyDown(KEY_LEFT))
     {
         PlayerSprite[0].x = PlayerAnimation(PlayerSprites[0],PlayerSprite[0], 6);
         DrawTextureRec(PlayerSprites[0], PlayerSprite[0], PlayerPosition, WHITE);
     }
 
 
-    else if(!IsKeyDown(KEY_A) && BLeftIdle)
+    else if(!(IsKeyDown(KEY_A) || IsKeyDown(KEY_LEFT)) && BLeftIdle)
     {
         PlayerSprite[1].x = PlayerAnimation(PlayerSprites[1],PlayerSprite[1], 5);
         DrawTextureRec(PlayerSprites[1], PlayerSprite[1], PlayerPosition, WHITE);
     }
 
 
-    else if(IsKeyDown(KEY_D))
+    else if(IsKeyDown(KEY_D) || IsKeyDown(KEY_RIGHT))
     {
         PlayerSprite[2].x = PlayerAnimation(PlayerSprites[2],PlayerSprite[2], 6);
         DrawTextureRec(PlayerSprites[2], PlayerSprite[2], PlayerPosition, WHITE);
     }
 
 
-    else if(!IsKeyDown(KEY_D) && BRightIdle)
+    else if(!(IsKeyDown(KEY_D) || IsKeyDown(KEY_RIGHT)) && BRightIdle)
     {
         PlayerSprite[3].x = PlayerAnimation(PlayerSprites[3],PlayerSprite[3], 5);
         DrawTextureRec(PlayerSprites[3], PlayerSprite[3], PlayerPosition, WHITE);
     }
 
 
-    else if(IsKeyDown(KEY_W))
+    else if(IsKeyDown(KEY_W) || IsKeyDown(KEY_UP))
     {
         PlayerSprite[4].x = PlayerAnimation(PlayerSprites[4],PlayerSprite[4], 6);
         DrawTextureRec(PlayerSprites[4], PlayerSprite[4], PlayerPosition, WHITE);
     }
 
 
-    else if(!IsKeyDown(KEY_W) && BUpIdle)
+    else if(!(IsKeyDown(KEY_W) || IsKeyDown(KEY_UP)) && BUpIdle)
     {
         PlayerSprite[5].x = PlayerAnimation(PlayerSprites[5],PlayerSprite[5], 5);
         DrawTextureRec(PlayerSprites[5], PlayerSprite[5], PlayerPosition, WHITE);
     }
 
 
-    else if(IsKeyDown(KEY_S))
+    else if(IsKeyDown(KEY_S) || IsKeyDown(KEY_DOWN))
     {
         PlayerSprite[6].x = PlayerAnimation(PlayerSprites[6],PlayerSprite[6], 6);
         DrawTextureRec(PlayerSprites[6], PlayerSprite[6], PlayerPosition, WHITE);
     }
 
 
-    else if(!IsKeyDown(KEY_S) && BDownIdle)
+    else if(!(IsKeyDown(KEY_S) || IsKeyDown(KEY_DOWN)) && BDownIdle)
     {
         PlayerSprite[7].x = PlayerAnimation(PlayerSprites[7],PlayerSprite[7], 5);
         DrawTextureRec(PlayerSprites[7], PlayerSprite[7], PlayerPosition, WHITE);
     }
 
 
-    //DrawTextureV(Fundo[1], fundo, WHITE);
-    for(i = 0; i < MostWallsQuantity; i++)
+    DrawTextureV(Fundo[1], fundo, WHITE);
+    /*for(i = 0; i < MostWallsQuantity; i++)
     {
         if(i < QWallsTop)
             DrawRectangleRec(WallsTOP[i],YELLOW);
@@ -614,7 +681,19 @@ if(AnimationPositionStarter)
             DrawRectangleRec(WallsLEFT[i],DARKPURPLE);
         if(i < QWallsRight)
             DrawRectangleRec(WallsRIGHT[i],DARKBLUE);
+    }*/
+    if(GetBigger && CollisionPower)
+    {
+        if(TextBlinkingAmination < 70)
+        {
+        DrawRectangle(0,172,200,28,BLACK);
+        DrawText("PRESS SPACE",13,175,25, WHITE);
+        }
+        if(TextBlinkingAmination >= 100)
+            TextBlinkingAmination = 0;
+        TextBlinkingAmination += 1;
     }
+
     EndDrawing();
     for(i = 0; i < 9; i++)
         UnloadTexture(PlayerSprites[i]);
