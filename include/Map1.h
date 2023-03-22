@@ -36,6 +36,10 @@ int PlayerAnimation(Texture2D PlayerSprites, Rectangle PlayerSprite,int Nimagens
     float PlayerSpeed = 60.0;
 /*----------------------------------------------------------*/
 
+/*------------------------------OPEN MAP ANIMATION------------------------------*/
+    bool OpenMapAnimation = true;
+    bool StarterConfig = true;
+/*------------------------------------------------------------------------------*/
 
 Rectangle PlayerSprite[8];
 bool AnimationPositionStarter = true;
@@ -161,7 +165,7 @@ if(AnimationPositionStarter)
 }
 /*----------------------------------------------------------------------------------------------------------------*/
 
-    SetWindowPosition( screenPosX, screenPosY);
+    SetWindowPosition(screenPosX, screenPosY);
     SetWindowSize(ViewSizeWidth, ViewSizeHeight);
 
 /*------------------------------WALLS COLLISIONS------------------------------*/
@@ -417,25 +421,18 @@ if(AnimationPositionStarter)
     Rectangle PowerCircle = {PosXPower, PosYPower, 30, 25};
 /*-------------------------------------------------------------------*/
 
-/*-----------------CHECKING PLAYER COLLISION WITH WALLS------------------*/
-   /*for(i = 0; i < 3; i++)
+/*------------------------------ENDING MAP-------------------------*/
+    Rectangle End = {PosXEnd, PosYEnd , 30, 30};
+/*-----------------------------------------------------------------*/
+
+    if(StarterConfig)
     {
-        WallsTOP[i].x = posXTOP[i];
-        WallsTOP[i].y = posYTOP[i];
-        WallsTOP[i].width = WidthWallHori[i];
+        SetupScreen();
+        ViewSizeHeight = 0;
+        ViewSizeWidth = 0;
+        StarterConfig = false;
+    }
 
-        WallsBOTTOM[i].x = posXBOTTOM[i];
-        WallsBOTTOM[i].y = posYBOTTOM[i];
-        WallsBOTTOM[i].width = WidthWallHori[i];  
-
-        WallsLEFT[i].x = posXLEFT[i];
-        WallsLEFT[i].y = posYLEFT[i];
-        WallsLEFT[i].height = HeightWallVert[i];
-
-        WallsRIGHT[i].x = posXRIGHT[i];
-        WallsRIGHT[i].y = posYRIGHT[i];
-        WallsRIGHT[i].height = HeightWallVert[i];
-    }*/
     for(i = 0; i < QWallsBottom; i++)
     {
         WallsBOTTOM[i].x = posXBOTTOM[i];
@@ -473,11 +470,13 @@ if(AnimationPositionStarter)
             break;
     }
     CollisionPower = CheckCollisionRecs(Player, PowerCircle);
+    CollisionEnd = CheckCollisionRecs(Player, End);
 /*-----------------------------------------------------------------------------------*/
 
     
 
-
+    if(!OpenMapAnimation)
+    {
     if((IsKeyDown(KEY_D) || IsKeyDown(KEY_RIGHT)) && !CollisionLEFT)
     {
         for(i = 0; i < MostWallsQuantity; i++)
@@ -492,6 +491,7 @@ if(AnimationPositionStarter)
                 posXRIGHT[i] -= PlayerSpeed*GetFrameTime();
         }
         PosXPower -= PlayerSpeed*GetFrameTime();
+        PosXEnd -= PlayerSpeed*GetFrameTime();
         fundo.x -= PlayerSpeed*GetFrameTime();
         screenPosX += PlayerSpeed*GetFrameTime();
         BRightIdle = true;
@@ -515,6 +515,7 @@ if(AnimationPositionStarter)
                 posXRIGHT[i] += PlayerSpeed*GetFrameTime();
         }
         PosXPower += PlayerSpeed*GetFrameTime();
+        PosXEnd += PlayerSpeed*GetFrameTime();
         fundo.x += PlayerSpeed*GetFrameTime();
         screenPosX -= PlayerSpeed*GetFrameTime();
         BLeftIdle = true;
@@ -538,6 +539,7 @@ if(AnimationPositionStarter)
                 posYRIGHT[i] += PlayerSpeed*GetFrameTime();
         }
         PosYPower += PlayerSpeed*GetFrameTime();
+        PosYEnd += PlayerSpeed*GetFrameTime();
         fundo.y += PlayerSpeed*GetFrameTime();
         screenPosY -= PlayerSpeed*GetFrameTime();
         BUpIdle = true;
@@ -561,6 +563,7 @@ if(AnimationPositionStarter)
                 posYRIGHT[i] -= PlayerSpeed*GetFrameTime();
         }
         PosYPower -= PlayerSpeed*GetFrameTime();
+        PosYEnd -= PlayerSpeed*GetFrameTime();
         fundo.y -= PlayerSpeed*GetFrameTime();
         screenPosY += PlayerSpeed*GetFrameTime();
         BDownIdle = true;
@@ -586,6 +589,8 @@ if(AnimationPositionStarter)
         fundo.y += 25;
         PosXPower += 25;
         PosYPower += 25;
+        PosXEnd += 25;
+        PosYEnd += 25;
         for(i = 0; i < MostWallsQuantity; i++)
         {
             if(i < QWallsTop)
@@ -611,7 +616,7 @@ if(AnimationPositionStarter)
         }
         GetBigger = false;
     }
-
+    }
     BeginDrawing();
     DrawTextureV(Fundo[0], fundo, WHITE);
     if(IsKeyDown(KEY_A) || IsKeyDown(KEY_LEFT))
@@ -669,19 +674,7 @@ if(AnimationPositionStarter)
         DrawTextureRec(PlayerSprites[7], PlayerSprite[7], PlayerPosition, WHITE);
     }
 
-
     DrawTextureV(Fundo[1], fundo, WHITE);
-    /*for(i = 0; i < MostWallsQuantity; i++)
-    {
-        if(i < QWallsTop)
-            DrawRectangleRec(WallsTOP[i],YELLOW);
-        if(i < QWallsBottom)
-            DrawRectangleRec(WallsBOTTOM[i],RED);
-        if(i < QWallsLeft)
-            DrawRectangleRec(WallsLEFT[i],DARKPURPLE);
-        if(i < QWallsRight)
-            DrawRectangleRec(WallsRIGHT[i],DARKBLUE);
-    }*/
     if(GetBigger && CollisionPower)
     {
         if(TextBlinkingAmination < 70)
@@ -693,13 +686,23 @@ if(AnimationPositionStarter)
             TextBlinkingAmination = 0;
         TextBlinkingAmination += 1;
     }
-
     EndDrawing();
+
+    if(OpenMapAnimation)
+    {
+        ViewSizeWidth += 10;
+        ViewSizeHeight += 10;
+        screenPosX -= 5;
+        screenPosY -= 5;
+        if(ViewSizeWidth == 200)
+            OpenMapAnimation = false;  
+    }
     for(i = 0; i < 9; i++)
         UnloadTexture(PlayerSprites[i]);
     UnloadTexture(Fundo[0]);
     UnloadTexture(Fundo[1]);
-
+    if(CollisionEnd)
+        return 2;
     return 1;
 }
 

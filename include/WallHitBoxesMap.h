@@ -71,8 +71,12 @@
 
     float PosYPower = -240;
 
+    float PosXEnd = 654;
+
+    float PosYEnd = -215;
 
 
+    bool CollisionEnd = false;
     bool CollisionPower = false;
     bool CollisionTOP = false;
     bool CollisionBOTTOM = false;

@@ -19,6 +19,8 @@ void SetupScreen(void)
 {
     PlayerWidthScreen = GetMonitorWidth(0);
     PlayerHeightScreen = GetMonitorHeight(0);
-    screenPosX = PlayerWidthScreen/2-ViewSizeWidth/2;
-    screenPosY = PlayerHeightScreen/2-ViewSizeHeight/2;
+    //screenPosX = PlayerWidthScreen/2-ViewSizeWidth/2;
+    //screenPosY = PlayerHeightScreen/2-ViewSizeHeight/2;
+    screenPosX = PlayerWidthScreen/2;
+    screenPosY = PlayerHeightScreen/2;
 }
